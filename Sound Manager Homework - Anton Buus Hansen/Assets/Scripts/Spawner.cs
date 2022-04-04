@@ -19,5 +19,6 @@ public class Spawner : MonoBehaviour
     public void SpawnObject()
     {
         Instantiate(ObjectToSpawn, spawnPoint.position, Quaternion.identity);
+        //Destroy(this.gameObject);
     }
 }
