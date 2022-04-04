@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour
 {
     Rigidbody rb;
 
-    public GameObject BonkDog;
+    public GameObject ObjectToSpawn;
 
     public Transform spawnPoint;
 
@@ -16,8 +16,8 @@ public class Spawner : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void SpawnBonkDog()
+    public void SpawnObject()
     {
-        Instantiate(BonkDog, spawnPoint.position, Quaternion.identity);
+        Instantiate(ObjectToSpawn, spawnPoint.position, Quaternion.identity);
     }
 }

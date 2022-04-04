@@ -535,7 +535,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -559,8 +559,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: -0.39
+  far clip plane: 1165.51
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -588,7 +588,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0744, y: 1.0744, z: 1.0744}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 845806023}
   - component: {fileID: 845806022}
   - component: {fileID: 845806021}
+  - component: {fileID: 845806024}
   m_Layer: 5
   m_Name: Toggle Sound
   m_TagString: Untagged
@@ -802,7 +803,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 845806022}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 845806024}
+        m_TargetAssemblyTypeName: ToggleAudio, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &845806022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,6 +854,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845806019}
   m_CullTransparentMesh: 1
+--- !u!114 &845806024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845806019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f496c7fa12ef2740a0c558f4a545200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toggleMusic: 0
+  _toggleEffects: 1
 --- !u!1 &913903811
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1036,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fb72cc25ede3bc84ab2343ab9dc51cca, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1374,6 +1401,7 @@ GameObject:
   - component: {fileID: 1657266608}
   - component: {fileID: 1657266607}
   - component: {fileID: 1657266606}
+  - component: {fileID: 1657266609}
   m_Layer: 5
   m_Name: Bruh
   m_TagString: Untagged
@@ -1444,7 +1472,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657266607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1657266609}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawnObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657266607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1523,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657266604}
   m_CullTransparentMesh: 1
+--- !u!114 &1657266609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657266604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b04647ab0029d408e1c18cf709e64a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToSpawn: {fileID: 6672257700532334464, guid: 57a8b097f50e2bc4eb6ce6ee7400dfd3, type: 3}
+  spawnPoint: {fileID: 1296874350}
 --- !u!1 &1731017251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,7 +1623,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1731017256}
         m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
-        m_MethodName: SpawnBonkDog
+        m_MethodName: SpawnObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1629,7 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b04647ab0029d408e1c18cf709e64a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BonkDog: {fileID: 5571843923345116649, guid: 2dd3ff3d381286543ac0a0916dacf8c1, type: 3}
+  ObjectToSpawn: {fileID: 5571843923345116649, guid: 2dd3ff3d381286543ac0a0916dacf8c1, type: 3}
   spawnPoint: {fileID: 1296874350}
 --- !u!1 &1803985005
 GameObject:
@@ -1722,6 +1776,7 @@ GameObject:
   - component: {fileID: 1991279669}
   - component: {fileID: 1991279668}
   - component: {fileID: 1991279667}
+  - component: {fileID: 1991279670}
   m_Layer: 5
   m_Name: Toggle Music
   m_TagString: Untagged
@@ -1792,7 +1847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1991279668}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1991279670}
+        m_TargetAssemblyTypeName: ToggleAudio, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991279668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1831,6 +1898,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991279665}
   m_CullTransparentMesh: 1
+--- !u!114 &1991279670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991279665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f496c7fa12ef2740a0c558f4a545200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _toggleMusic: 1
+  _toggleEffects: 0
 --- !u!1 &2081833925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081833926}
   - component: {fileID: 2081833927}
+  - component: {fileID: 2081833928}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1917,7 +1999,20 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2081833928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081833925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452948e2059eaff4cba0e6f1d8950a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 2081833927}
