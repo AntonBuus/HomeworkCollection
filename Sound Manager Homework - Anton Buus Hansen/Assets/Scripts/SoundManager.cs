@@ -8,10 +8,7 @@ public class SoundManager : MonoBehaviour
 
    [SerializeField] private AudioSource _musicSource, _effectsSource;
 
-    [SerializeField] private bool isSpawned;
-    public GameObject _boomBox;
-
-
+    
    void Awake() 
    {
        if (Instance == null) 
@@ -42,7 +39,5 @@ public class SoundManager : MonoBehaviour
     public void ToggleMusic()
     {
         _musicSource.mute = !_musicSource.mute;
-        //_boomBox.SetActive = _boomBox.SetActive;
-
     }
 }
