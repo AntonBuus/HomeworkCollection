@@ -36,9 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\BubblePop.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
-     <Compile Include="Assets\ScoreManager.cs" />
+     <Compile Include="Assets\Assignment1\BubblePop.cs" />
+     <Compile Include="Assets\Assignment1\ScoreManager.cs" />
+     <Compile Include="Assets\Assignment1\PlayerMovement.cs" />
+     <Compile Include="Assets\MeshGeneration.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
